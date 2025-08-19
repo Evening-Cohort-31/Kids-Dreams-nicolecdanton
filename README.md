@@ -35,10 +35,23 @@ Make sure your Developer Tools are open at all times while working on this proje
 Before you click the "Complete Assessment" button on the Learning Platform, add your answers below each question and make a commit.
 
 1. When a child is clicked on in the browser, which module contains the code that will execute on that event happening? Can you explain the algorithm of that logic?
-   > Your answer here
+   > The Kids.js module contains the code that handles the click event listener. The Event listener looks for a click on objects with type = "child" in its dataset. If the dataset has type= "child", then the window alert displays showing the clicked object's "name" and "wish" (also from its dataset).
+
 2. In the **Pairings** module, why must the `findCelebrityMatch()` function be invoked inside the `for..of` loop that iterates the kids array?
-   > Your answer here
+   > We are actually invoking the findCelebrityMatch function inside of a for..of loop that iterates the kids array. 
+   The reason is because the findCelebrity match acts on each kid object individually in order to find the celebrity.id that matches its particular celebrityId. 
+   
+   The findCelebrityMatch() basically acts as a lookup function here and we want an answer for each kid individually.
+
 3. In the **CelebrityList** module, can you describe how the name of the sport that the celebrity plays can be displayed in the window alert text?
-   > Your answer here
+   > We have an event listener in CelebrityList.js
+   The first thing the event lister is doing is it is looking out for any clicks on objects with type="celebrity" in its dataset. 
+   
+   When we create the Celebrity html in Celebrities(), we added state to the list items: type, name, id, and sport. 
+
+   Once the event listener gets a applicable click, it surfaces a window alert showing a message of the clicked item's name and sport (from the dataset we added) in a message we crafted.
+
 4. Can you describe, in detail, the algorithm that is in the `main` module?
-   > Your answer here
+   > Here we start by targeting the DOM element with the id 'container'
+   We then craft some HTML and assignn that to the variable applicationHTML. In crafting the HTML, we basically are creating the structure/scaffolding to hold the HTML we've created in the other modules. So those are getting invoked in here (meaning we also had to import them into main.js too). 
+   Now that we have our HTML created and assigned to a variable, we inject it into our index document with mainContainer.innerHTML = applicationHTML
