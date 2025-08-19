@@ -5,12 +5,12 @@ const celebrities = getCelebrities()
 export const Celebrities = () => {
     let html = "<ol>"
 
-    for (const star of celebrities) {
+    for (const celebrity of celebrities) {
         html += `<li 
                     data-id="${celebrity.id}" 
                     data-type="celebrity"
-                    data-sport="${celebrty.sport}"
-                    id="star--${celebrity.id}">
+                    data-sport="${celebrity.sport}"
+                    data-email="${celebrity.email}">
                     ${celebrity.name}
                 </li>`
     }
